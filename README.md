@@ -1,8 +1,8 @@
 # Quick start Electron + ReactJS + Redux
 
 ## For setup
-1. git clone https://github.com/jsparrow2006/quick_start_electron_reactjs.git `YOUR_PROJECT_NAME`
-   replace YOUR_PROJECT_NAME with real neme
+1. ```git clone https://github.com/jsparrow2006/quick_start_electron_reactjs.git <YOUR_PROJECT_NAME>```  
+   replace ```<YOUR_PROJECT_NAME>``` with real neme
 
 2. Go to the directory with your application and run ```npm install```
 
