@@ -18,7 +18,7 @@ require("update-electron-app")({
 
 function createWindow() {
   mainWindow = new BrowserWindow({ width: 900, height: 680 });
-  mainWindow.removeMenu();
+  // mainWindow.removeMenu();
   mainWindow.title = manifest.name
   mainWindow.loadURL(
     isDev
