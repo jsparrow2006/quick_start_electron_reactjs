@@ -1,9 +1,13 @@
 const electron = require("electron");
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const fs = require('fs');
 
 const path = require("path");
 const isDev = require("electron-is-dev");
+
+let rawdata = fs.readFileSync('public/manifest.json');
+let manifest = JSON.parse(rawdata);
 
 let mainWindow;
 
@@ -14,6 +18,8 @@ require("update-electron-app")({
 
 function createWindow() {
   mainWindow = new BrowserWindow({ width: 900, height: 680 });
+  mainWindow.removeMenu();
+  mainWindow.title = manifest.name
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"

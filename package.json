@@ -6,42 +6,67 @@
   "private": true,
   "dependencies": {
     "cross-env": "5.1.6",
-    "electron-is-dev": "0.3.0",
+    "electron-is-dev": "^1.2.0",
     "electron-log": "^2.2.6",
     "lodash": "^4.17.11",
-    "react": "16.4.0",
-    "react-dom": "16.4.0",
-    "react-redux": "^5.0.7",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "update-electron-app": "^1.2.0"
+    "update-electron-app": "^1.5.0"
   },
   "devDependencies": {
-    "concurrently": "3.5.1",
-    "electron": "2.0.2",
-    "electron-builder": "^20.15.1",
-    "prettier": "^1.4.4",
-    "react-scripts": "1.1.4",
-    "electron-devtools-installer": "^2.2.4",
-    "wait-on": "2.1.0"
+    "concurrently": "^5.3.0",
+    "electron": "^10.1.1",
+    "electron-builder": "^22.8.0",
+    "electron-devtools-installer": "^3.1.1",
+    "prettier": "^2.1.1",
+    "react-scripts": "^3.4.3",
+    "wait-on": "^5.2.0"
   },
   "build": {
+    "appId": "io.example.electron-cra",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
     "publish": {
       "provider": "github"
+    },
+    "electronDownload": {
+      "cache": "./cache"
     }
   },
   "main": "public/electron.js",
   "homepage": "./",
   "scripts": {
+    "setupProject": "node setupProject.js",
+    "develop": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-build": "electron-builder",
     "react-start": "react-scripts start",
     "react-build": "react-scripts build",
     "react-test": "react-scripts test --env=jsdom",
     "react-eject": "react-scripts eject",
-    "electron-build": "electron-builder",
     "release": "npm run react-build && electron-builder --publish=always",
-    "build": "npm run react-build && npm run electron-build",
-    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "build": "npm run react-build && npm run electron-build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
