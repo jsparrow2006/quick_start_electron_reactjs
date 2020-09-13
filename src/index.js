@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import Main from './containers/main/Main';
 import { createStore, applyMiddleware, compose } from 'redux';
 import allReducers from './reducers';
-import './styles/main.css';
+import './styles/main.scss';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import thunk from 'redux-thunk';
 
@@ -13,7 +13,7 @@ const store = createStore(allReducers, composeEnhancers(applyMiddleware(thunk)))
 
 render(
     <Provider store={store}>
-        <div>
+        <div className='main-container'>
             <Router>
                 <Route exact path='/' component={Main}/>
             </Router>

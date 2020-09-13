@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Test from '../../components/test/Test'
-import './style/index.css';
+import './main.scss';
 
 
 class Main extends Component {
