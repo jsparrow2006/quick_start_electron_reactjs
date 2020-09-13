@@ -12,5 +12,5 @@
 
 ## Scripts
 ```npm run develop``` for start app dev  
-```npm run electron-build``` for build Electron app.
+```npm run electron-build``` for build Electron app.  
 ```npm run setupProject``` for settings your package.json and manifest.json.
