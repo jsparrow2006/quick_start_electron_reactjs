@@ -1,19 +1,19 @@
-import fetch from 'isomorphic-fetch';
+import {Dispatch, Action} from 'redux';
 
 export const testAction = () => {
-    return (dispatch) => {
+    return (dispatch: Dispatch<Action>) => {
         dispatch({
             type: '' //  Action before request
         });
 
-        function requestOK(response) {
+        function requestOK(response: any) {
             return {
                 type: '',
                 payload: response
             }
         }
 
-        function requestERR(response) {
+        function requestERR(response: any) {
             return {
                 type: '',
                 payload: response

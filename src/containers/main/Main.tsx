@@ -1,7 +1,7 @@
 import React  from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Test from '../../components/test/Test'
+import Index from '@components/test'
 import './main.scss';
 
 interface IMainPropTypes {
@@ -11,7 +11,7 @@ interface IMainPropTypes {
 const Main: React.FC<IMainPropTypes> = (props: IMainPropTypes) => {
     return (
         <div>
-            <Test/>
+            <Index/>
         </div>
     );
 }
