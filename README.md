@@ -2,7 +2,8 @@
 
 ## For setup
 1. ```git clone https://github.com/jsparrow2006/quick_start_electron_reactjs.git <YOUR_PROJECT_NAME>```  
-   replace ```<YOUR_PROJECT_NAME>``` with real name
+   or ```git clone -b with_type-script https://github.com/username/project.git <YOUR_PROJECT_NAME>``` if you want use type-script
+   replace ```<YOUR_PROJECT_NAME>``` to real name
 
 2. Go to the directory with your application and run ```npm install```
 
